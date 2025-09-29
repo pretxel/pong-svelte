@@ -1,6 +1,20 @@
 # 🏓 Pong Game - Built with Svelte
 
-A classic Pong game implementation using Svelte 5 and HTML5 Canvas, featuring smooth gameplay, AI opponent, and responsive design.
+A fully functional classic Pong game implementation using Svelte and HTML5 Canvas, featuring smooth 60fps gameplay, intelligent AI opponent, modular architecture, and responsive design.
+
+## 🤖 Created with AI-Assisted Development
+
+This game was created through **vibe coding** using **Cursor** and **ChatGPT**, demonstrating the power of AI-assisted development for building complex, modular applications. The entire codebase was developed iteratively through natural language conversations, showcasing how modern AI tools can help create production-ready code.
+
+## ✅ Status: Fully Working!
+
+This game has been successfully tested and is fully functional with:
+- ✅ **Canvas rendering** working properly
+- ✅ **Game physics** and collision detection
+- ✅ **AI opponent** with multiple difficulty levels
+- ✅ **Input controls** (keyboard and touch)
+- ✅ **Responsive design** and proper sizing
+- ✅ **Svelte 5 compatibility** with new component API
 
 ## 🎮 Game Features
 
@@ -34,7 +48,7 @@ A classic Pong game implementation using Svelte 5 and HTML5 Canvas, featuring sm
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v16 or higher)
+- Node.js (v20.19+ or v22.12+ required for Svelte 5)
 - pnpm (recommended) or npm
 
 ### Installation
@@ -54,12 +68,22 @@ npm install
 
 3. Start the development server:
 ```bash
+# Using npx (recommended if pnpm has Node.js version issues)
+npx vite dev
+
+# Or using pnpm/npm
 pnpm dev
 # or
 npm run dev
 ```
 
 4. Open your browser and navigate to `http://localhost:5173`
+
+### 🔧 Troubleshooting
+
+**Node.js Version Issues**: If you encounter Node.js version errors with pnpm, use `npx vite dev` directly or ensure your Node.js version is 20.19+ or 22.12+.
+
+**Canvas Not Visible**: The game uses HTML5 Canvas with specific sizing. Ensure your browser supports Canvas API and JavaScript is enabled.
 
 ### Build for Production
 
@@ -103,10 +127,19 @@ npm run build
 
 ```
 src/
-├── App.svelte          # Main game component with canvas and game logic
-├── main.js            # Application entry point (Svelte 5 mount API)
-├── app.css           # Global styles
-└── assets/           # Static assets
+├── App.svelte                 # Main application component
+├── main.js                   # Application entry point (Svelte 5 mount API)
+├── app.css                  # Global styles
+├── lib/
+│   ├── gameConfig.js        # Game constants and configuration
+│   ├── gameStore.js         # Centralized state management (Svelte stores)
+│   ├── physics.js           # Physics engine and collision detection
+│   ├── ai.js                # AI logic with difficulty levels
+│   ├── inputHandler.js      # Keyboard and touch input handling
+│   ├── gameEngine.js        # Main game loop orchestration
+│   ├── GameCanvas.svelte    # Canvas rendering component
+│   └── GameHUD.svelte       # UI controls and score display
+└── assets/                  # Static assets
 ```
 
 ### Key Game Variables
@@ -189,10 +222,16 @@ Feel free to contribute improvements:
 4. Test thoroughly
 5. Submit a pull request
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
+### 🎯 Potential Enhancements
+- Sound effects and music
+- Particle effects for ball hits
+- More AI difficulty levels
+- Tournament mode
+- Customizable themes
+- Multiplayer support
 
 ---
 
 **Enjoy playing Pong! 🏓**
+
+*Built with ❤️ using Svelte 5 - A fully functional, modular implementation*
